@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o)31w+4%#yw^mob)&$jswjdlh-43_%9zr@puqi-n-!1t62s4*x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cramshaw.pythonanywhere.com']
 
 
 # Application definition
@@ -77,8 +77,11 @@ WSGI_APPLICATION = 'fiveaside.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cramshaw$default',
+        'USER' : 'cramshaw',
+        'PASSWORD' : 'football',
+        'HOST' : 'mysql.server',
     }
 }
 

@@ -1,0 +1,63 @@
+{% extends 'fives/base.html' %}
+
+{% block body_block %}
+
+
+<div class="matches">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+{% if results %}
+    <h3>Results</h3>
+    <table class="table table-hover">
+    {% for match in results %}
+        <tr>
+            <td>{{match.time.date|date:"SHORT_DATE_FORMAT"}}</td>
+            <td><a href="/fives/match/{{ match.id }}/">{{ match.home_team }}</a></td>
+            <td><a href="/fives/match/{{ match.id }}/">{{match.home_goals}} - {{match.away_goals}}</a></td>
+            <td><a href="/fives/match/{{ match.id }}/">{{ match.away_team }}</a></td> 
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <h3>Results</h3>
+    <p>No results are available.</p>
+{% endif %}
+            </div>
+
+
+
+            <div class="col-md-6">
+
+{% if fixtures %}
+    <h3>Fixtures</h3>
+    <table class="table table-hover">
+    {% for match in fixtures %}
+        <tr>
+            <td>{{match.time.date|date:"SHORT_DATE_FORMAT"}}</td>
+            <td><a href="/fives/match/{{ match.id }}/">{{ match.home_team }}</a></td>
+            <td><a href="/fives/match/{{ match.id }}/">v</a></td>
+            <td><a href="/fives/match/{{ match.id }}/">{{ match.away_team }}</a></td> 
+        </tr>
+    {% endfor %}
+    </table>
+
+{% else %}
+    <h3>Fixtures</h3>
+    <p>No fixtures are available.</p>
+{% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

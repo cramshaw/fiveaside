@@ -1,0 +1,106 @@
+.comment .username {
+  float: left;
+}
+
+.comment .dash {
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #B4B4BC;
+}
+
+.comment .date {
+  float: left;
+  color: #B4B4BC;
+}
+
+.comment .text {
+  position: relative;
+}
+
+.comments .container{
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 500px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.comment .container{
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #CACAD3;
+  border-width: 1px;
+  margin-bottom: 10px;
+  max-width: 500px;
+  margin-left: 10px;
+  background-color: #E1E1EA;
+}
+
+.jumbotron {
+    background-image:url('images/jumbotron1.jpg');
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: white;
+  font-family: 'Roboto', serif;
+  text-align: center;
+}
+
+.jumbotron a {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.mainbody {
+  background-color: #eaf0f6;
+  background-size: cover;
+}
+
+.match-summary .container {
+  background-color: #335bc9;
+  color: white;
+}
+
+.match-summary .container a {
+  color: white;
+}
+
+.menu li {
+    display: inline;
+}
+
+.menu a {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.matches {
+  text-align: center;
+}
+
+.match-time {
+  text-align: center;
+}
+
+.squadlist {
+}
+
+.teamname h1{
+  text-align: center;
+}
+
+.team-details {
+  padding-top: 60px;
+}

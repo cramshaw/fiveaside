@@ -1,0 +1,29 @@
+{% extends 'fives/base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block login %} class="active" {% endblock %}
+
+{% block body_block %}
+
+<div class="login-form">
+    <div class="container">
+
+    <h1>Log in to Wednesday Night Football</h1>
+
+    <form class="form-group" id="login_form" method="post" action="/fives/login/">
+        {% csrf_token %}
+        Username: <input type="text" name="username" value="" size="50" />
+        <br />
+        <br />
+        Password: <input type="password" name="password" value="" size="50" />
+        <br />
+
+        <button type="submit" class="btn btn-primary">Submit </button>
+    </form>
+
+
+    </div>
+</div>
+
+{% endblock %}

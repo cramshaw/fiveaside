@@ -8,10 +8,10 @@
 <div class="match-summary">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-sm-3">
             </div>
 
-            <div class="col-md-2">
+            <div class="col-sm-2">
                 <div class="home-team">
 
                     <h1><a href="/fives/team/{{ match_id.home_team.id }}/">{{ match_id.home_team }}</a></h1>
@@ -19,11 +19,11 @@
                 </div>
                 </div>
 
-<div class="col-md-2">
+<div class="col-sm-2">
     <div class="score">
 
 
-                <div class="col-md-4">
+                <div class="col-sm-4">
                 <div class="home-score">
                 {% if match_id.home_goals %}
                     <h1>{{ match_id.home_goals }}</h1>
@@ -34,10 +34,10 @@
                 </div>
             </div>
 
-<div class="col-md-4">
+<div class="col-sm-4">
     <h2> - </h2>
 </div>
-            <div class="col-md-4">
+            <div class="col-sm-4">
 
                 <div class="away-score">
 
@@ -53,7 +53,7 @@
                 </div>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-sm-2">
                 <div class="away-team">
 
                     <h1><a href="/fives/team/{{ match_id.away_team.id }}/">{{ match_id.away_team }}</a></h1>
@@ -75,6 +75,8 @@
 
 <div class="match-details">
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
 
 {% if match_id.match_details %}
     <h3>Match Summary</h3>
@@ -83,6 +85,8 @@
     <h3>Awaiting Match Report</h3>
 {% endif %}
 
+            </div>
+        </div>
     </div>
 </div>
 
@@ -91,6 +95,8 @@
 
 <div class="comment-form">
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
         <form role="form" method="post" action="/fives/match/{{ match_id.id }}/">
 
         {% csrf_token %}
@@ -101,6 +107,9 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit </button>
         </form>
+
+            </div>
+        </div>
     </div>
 </div>
 
@@ -112,8 +121,8 @@
 
 <div class="comments">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row pull-left">
+            <div class="col-sm-6">
 
 {% for comment in match_id.comment.all reversed %}
 

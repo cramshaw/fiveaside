@@ -76,7 +76,9 @@
 <div class="match-details">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
+                <div class="match-details-text">
+                    <div class="container">
 
 {% if match_id.match_details %}
     <h3>Match Summary</h3>
@@ -85,10 +87,37 @@
     <h3>Awaiting Match Report</h3>
 {% endif %}
 
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="h2h">
+                    <div class="container">
+
+                    <h3> Head to head record</h3>
+                        <div class="col-md-6">
+                        <table class="table table-hover">
+                            <tr>
+                            <th>{{ match_id.home_team }} wins</th>
+                            <th>Draws</th>
+                            <th>{{ match_id.away_team }} wins</th>
+                        </tr>
+                        <tr>
+                            <td>{{ h2hhome }}</td>
+                            <td>{{ h2hdraw }}</td>
+                            <td>{{ h2haway }}</td>
+                        </tr>
+                        </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 
 {% if user.userprofile.team == match_id.home_team or user.userprofile.team == match_id.away_team %}
@@ -96,7 +125,7 @@
 <div class="comment-form">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
         <form role="form" method="post" action="/fives/match/{{ match_id.id }}/">
 
         {% csrf_token %}
@@ -114,9 +143,6 @@
 </div>
 
 {% endif %}
-
-
-
 
 
 <div class="comments">

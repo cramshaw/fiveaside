@@ -136,9 +136,13 @@ def match_view(request, match_id):
     else:
         comment_form = CommentForm()
 
+    hometeam, awayteam, draw = Team.H2H(match_id.home_team, match_id.away_team)
     context = RequestContext(request, {
         'match_id' : match_id,
         'add_comment' : CommentForm(),
+        'h2hhome' : hometeam, 
+        'h2haway' : awayteam, 
+        'h2hdraw' : draw,
         })
     return render_to_response('fives/match.html', {}, context)
 

@@ -33,6 +33,14 @@
   background-color: #E1E1EA;
 }
 
+.h2h h3{
+  text-indent: 150px;
+}
+
+.h2h table, th{
+  text-align: center;
+}
+
 .jumbotron {
     background-image:url('images/jumbotron1.jpg');
     height: 500px;

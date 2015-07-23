@@ -10,17 +10,37 @@ class Team(models.Model):
         d= 0
         l = 0
         matches = Match.objects.filter(
-            Q(home_team=team_id) | Q(away_team=team_id)
+            Q(home_team=team_id) | Q(away_team=team_id),
+            Q(is_result=True)
         )
         for match in matches:
-            if match.is_result:
-                if Match.winner(match) == 'D':
-                    d += 1
-                elif Match.winner(match) == team_id:
-                    w +=1
-                else:
-                    l += 1
+            winner = Match.winner(match)
+            if winner == 'D':
+                d += 1
+            elif winner == team_id:
+                w +=1
+            else:
+                l += 1
         return w, d, l 
+
+    def H2H(team_1, team_2):
+        team1 = 0
+        team2 = 0
+        draw = 0
+        matches = Match.objects.filter(
+            Q(home_team=team_1, away_team=team_2) | Q(home_team=team_2, away_team=team_1),
+            Q(is_result=True)
+        )
+        for match in matches:
+            winner = Match.winner(match)
+            if winner == "D":
+                draw +=1
+            elif winner == team_1:
+                team1 +=1
+            elif winner == team_2:
+                team2 += 1
+        return team1, team2, draw
+
 
     def get_last_match(team_id):
         try:
@@ -58,6 +78,7 @@ class Match(models.Model):
         get_latest_by = 'time'
 
     def winner(self):
+        #could make this ignore instances of self.home_goals == None
         if self.home_goals == self.away_goals:
             return "D"
         elif self.home_goals > self.away_goals:

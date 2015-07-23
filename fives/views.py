@@ -63,6 +63,15 @@ def signup(request):
 
             profile.save()
 
+            username = request.POST['username']
+            password = request.POST['password']
+
+            user = authenticate(username=username, password=password)
+
+            if user:
+                if user.is_active:
+                    login(request, user)
+
             registered = True
 
         else:

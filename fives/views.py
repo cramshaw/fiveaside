@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.template import RequestContext, loader
 from django.views import generic
 from django.db.models import Q
@@ -129,6 +130,8 @@ def match_view(request, match_id):
             comment.match_id = match_id
             comment.time = datetime.datetime.now()
             comment.save()
+
+            return HttpResponseRedirect(reverse('match', args=[match_id.id]))
 
         else:
             print form.errors

@@ -17,29 +17,28 @@
                     <h1><a href="/fives/team/{{ match_id.home_team.id }}/">{{ match_id.home_team }}</a></h1>
 
                 </div>
-                </div>
-
-<div class="col-sm-2">
-    <div class="score">
-
-
-                <div class="col-sm-4">
-                <div class="home-score">
-                {% if match_id.home_goals %}
-                    <h1>{{ match_id.home_goals }}</h1>
-                {% else %}
-                    <p></p>
-                {% endif %}
-
-                </div>
             </div>
 
-<div class="col-sm-4">
-    <h2> - </h2>
-</div>
-            <div class="col-sm-4">
+            <div class="col-sm-2">
+                <div class="score">
 
-                <div class="away-score">
+                    <div class="col-sm-4">
+                        <div class="home-score">
+                            {% if match_id.home_goals %}
+                                <h1>{{ match_id.home_goals }}</h1>
+                            {% else %}
+                                <p></p>
+                            {% endif %}
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <h2> - </h2>
+                    </div>
+            
+                    <div class="col-sm-4">
+                    <div class="away-score">
 
                     {% if match_id.away_goals %}
                         <h1>{{ match_id.away_goals }}</h1>
@@ -47,19 +46,18 @@
                         <p> </p>
                     {% endif %}
 
-                </div>
-                </div>
+                    </div>
+                    </div>
 
                 </div>
-                </div>
+            </div>
 
-                <div class="col-sm-2">
+            <div class="col-sm-2">
                 <div class="away-team">
 
                     <h1><a href="/fives/team/{{ match_id.away_team.id }}/">{{ match_id.away_team }}</a></h1>
 
                 </div>
-
             </div>
 
         </div>

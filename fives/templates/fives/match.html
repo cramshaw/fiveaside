@@ -8,10 +8,8 @@
 <div class="match-summary">
     <div class="container">
         <div class="row">
-            <div class="col-sm-3">
-            </div>
 
-            <div class="col-sm-2">
+            <div class="col-sm-2 col-sm-offset-3">
                 <div class="home-team">
 
                     <h1><a href="/fives/team/{{ match_id.home_team.id }}/">{{ match_id.home_team }}</a></h1>
@@ -38,19 +36,20 @@
                     </div>
             
                     <div class="col-sm-4">
-                    <div class="away-score">
+                        <div class="away-score">
 
-                    {% if match_id.away_goals %}
-                        <h1>{{ match_id.away_goals }}</h1>
-                    {% else %}
-                        <p> </p>
-                    {% endif %}
+                            {% if match_id.away_goals %}
+                                <h1>{{ match_id.away_goals }}</h1>
+                            {% else %}
+                                <p> </p>
+                            {% endif %}
 
-                    </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
+
 
             <div class="col-sm-2">
                 <div class="away-team">
@@ -62,13 +61,18 @@
 
         </div>
 
+
         <div class="row">
             <div class="match-time">
                 <h4>{{ match_id.time }}</h4>
             </div>
         </div>
+
     </div>
 </div>
+
+
+
 
 
 <div class="match-details">
@@ -78,19 +82,19 @@
                 <div class="match-details-text">
                     <div class="container">
 
-{% if match_id.match_details %}
-    <h3>Match Summary</h3>
-    <p>{{ match_id.match_details|linebreaks }}</p>
-{% else %}
-    <h3>Awaiting Match Report</h3>
-{% endif %}
+                        {% if match_id.match_details %}
+                            <h3>Match Summary</h3>
+                            <p>{{ match_id.match_details|linebreaks }}</p>
+                        {% else %}
+                            <h3>Awaiting Match Report</h3>
+                        {% endif %}
 
                     </div>
                 </div>
             </div>
 
 
-            <div class="col-md-6">
+            <div class="row">
                 <div class="h2h">
                     <div class="container">
 

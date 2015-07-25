@@ -68,18 +68,18 @@ class="active"
             </div>
 
         <div class="col-md-6">
-
-        <div class="squadlist">
-            <div class="container">
-                <h3>Squad:</h3>
-                {% for player in team_id.player.all %}
-                <ul>
-                    <li>{{ player }}</li>
-                </ul>
-                {% endfor %}
+            <div class="squadlist">
+                <div class="container">
+                    <div class="row">
+                    <h3>Squad:</h3>
+                    {% for player in team_id.player.all %}
+                    <ul>
+                        <li>{{ player }}</li>
+                    </ul>
+                    {% endfor %}
+                    </div>
+                </div>
             </div>
-
-        </div>
         </div>
     </div>
 </div>

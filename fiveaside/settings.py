@@ -92,12 +92,8 @@ WSGI_APPLICATION = 'fiveaside.wsgi.application'
 #}
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'fiveaside',
-    }
-}
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
 
 
 

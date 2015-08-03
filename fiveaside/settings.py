@@ -93,7 +93,8 @@ WSGI_APPLICATION = 'fiveaside.wsgi.application'
 
 
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+
+DATABASES = {'default': dj_database_url.config()}
 
 
 

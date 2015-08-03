@@ -73,6 +73,7 @@ class Match(models.Model):
     away_goals = models.IntegerField(null=True, blank=True)
     match_details = models.TextField(max_length=500, blank=True)
     is_result = models.BooleanField(default=False)
+    available_players = models.ManyToManyField(User, blank=True, related_name = "player")
 
     class Meta: 
         get_latest_by = 'time'

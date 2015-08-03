@@ -3,6 +3,7 @@ import models
 
 class MatchAdmin(admin.ModelAdmin):
     list_display = ['id', 'home_team', 'away_team', 'time', 'is_result']
+    filter_horizontal = ('available_players',)
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['comment', 'match_id', 'user']

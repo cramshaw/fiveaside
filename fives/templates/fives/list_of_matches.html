@@ -13,9 +13,9 @@
     {% for match in results %}
         <tr>
             <td>{{match.time.date|date:"SHORT_DATE_FORMAT"}}</td>
-            <td><a href="/fives/match/{{ match.id }}/">{{ match.home_team }}</a></td>
-            <td><a href="/fives/match/{{ match.id }}/">{{match.home_goals}} - {{match.away_goals}}</a></td>
-            <td><a href="/fives/match/{{ match.id }}/">{{ match.away_team }}</a></td> 
+            <td><a href="/wnf/match/{{ match.id }}/">{{ match.home_team }}</a></td>
+            <td><a href="/wnf/match/{{ match.id }}/">{{match.home_goals}} - {{match.away_goals}}</a></td>
+            <td><a href="/wnf/match/{{ match.id }}/">{{ match.away_team }}</a></td> 
         </tr>
     {% endfor %}
     </table>
@@ -35,9 +35,9 @@
     {% for match in fixtures %}
         <tr>
             <td>{{match.time.date|date:"SHORT_DATE_FORMAT"}}</td>
-            <td><a href="/fives/match/{{ match.id }}/">{{ match.home_team }}</a></td>
-            <td><a href="/fives/match/{{ match.id }}/">v</a></td>
-            <td><a href="/fives/match/{{ match.id }}/">{{ match.away_team }}</a></td> 
+            <td><a href="/wnf/match/{{ match.id }}/">{{ match.home_team }}</a></td>
+            <td><a href="/wnf/match/{{ match.id }}/">v</a></td>
+            <td><a href="/wnf/match/{{ match.id }}/">{{ match.away_team }}</a></td> 
         </tr>
     {% endfor %}
     </table>

@@ -14,22 +14,22 @@
         <div class="menu">
             <div class="container">
                 <ul class="pull-left nav nav-pills">
-                    <li {% block home %} {% endblock %}><a href="/fives/">Home</a></li>
+                    <li {% block home %} {% endblock %}><a href="/wnf/">Home</a></li>
                 {% if user.is_authenticated %}
-                    <li {% block my_matches %} {% endblock %}><a href="/fives/my_matches">My Matches</a></li>
-                    <li {% block team %} {% endblock %}><a href="/fives/team/{{ user.userprofile.team.id }}">{{ user.userprofile.team }}</a></li>
+                    <li {% block my_matches %} {% endblock %}><a href="/wnf/my_matches">My Matches</a></li>
+                    <li {% block team %} {% endblock %}><a href="/wnf/team/{{ user.userprofile.team.id }}">{{ user.userprofile.team }}</a></li>
                 {% else %}
                 {% endif %}
-                    <li {% block all_matches %} {% endblock %}><a href="/fives/all_matches">All Matches</a></li>
+                    <li {% block all_matches %} {% endblock %}><a href="/wnf/all_matches">All Matches</a></li>
                 </ul>
 
                 <ul class="pull-right nav nav-pills">
                 {% if user.is_authenticated %}
-                    <li {% block profile %} {% endblock %}><a href="/fives/profile/{{ user.id }}/"> <span class="glyphicon glyphicon-user"></span>  Profile</a></li>
-                    <li><a href="/fives/logout/">Logout</a></li>
+                    <li {% block profile %} {% endblock %}><a href="/wnf/profile/{{ user.id }}/"> <span class="glyphicon glyphicon-user"></span>  Profile</a></li>
+                    <li><a href="/wnf/logout/">Logout</a></li>
                 {% else %}
-                    <li {% block signup %} {% endblock %}><a href="/fives/signup/">Sign Up</a></li>
-                    <li {% block login %} {% endblock %}><a href="/fives/login/">Log In</a></li>
+                    <li {% block signup %} {% endblock %}><a href="/wnf/signup/">Sign Up</a></li>
+                    <li {% block login %} {% endblock %}><a href="/wnf/login/">Log In</a></li>
                 {% endif %}
                 </ul>
             </div>

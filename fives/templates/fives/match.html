@@ -12,7 +12,7 @@
             <div class="col-sm-2 col-sm-offset-3">
                 <div class="home-team">
 
-                    <h1><a href="/fives/team/{{ match_id.home_team.id }}/">{{ match_id.home_team }}</a></h1>
+                    <h1><a href="/wnf/team/{{ match_id.home_team.id }}/">{{ match_id.home_team }}</a></h1>
 
                 </div>
             </div>
@@ -54,7 +54,7 @@
             <div class="col-sm-2">
                 <div class="away-team">
 
-                    <h1><a href="/fives/team/{{ match_id.away_team.id }}/">{{ match_id.away_team }}</a></h1>
+                    <h1><a href="/wnf/team/{{ match_id.away_team.id }}/">{{ match_id.away_team }}</a></h1>
 
                 </div>
             </div>
@@ -128,7 +128,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-        <form role="form" method="post" action="/fives/match/{{ match_id.id }}/">
+        <form role="form" method="post" action="/wnf/match/{{ match_id.id }}/">
 
         {% csrf_token %}
 

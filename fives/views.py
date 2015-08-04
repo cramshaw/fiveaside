@@ -29,7 +29,7 @@ def login_view(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect('/fives/my_matches/')
+                return HttpResponseRedirect('/wnf/my_matches/')
             else:
                 return HttpResponse("Your account is disabled.")
         else:
@@ -42,7 +42,7 @@ def login_view(request):
 @login_required
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect('/fives/')
+    return HttpResponseRedirect('/wnf/')
 
 def signup(request):
     context = RequestContext(request)

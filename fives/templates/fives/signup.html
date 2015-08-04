@@ -13,10 +13,10 @@
 
     {% if registered %}
         <strong>Congratulations, you are signed up!</strong>
-        <a href="/fives/my_matches/">View your team's matches.</a><br />
+        <a href="/wnf/my_matches/">View your team's matches.</a><br />
     {% else %}
 
-        <form id="user_form" method="post" action="/fives/signup/" enctype="multipart/form-data">
+        <form id="user_form" method="post" action="/wnf/signup/" enctype="multipart/form-data">
 
             {% csrf_token %}
 

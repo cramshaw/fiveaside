@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o)31w+4%#yw^mob)&$jswjdlh-43_%9zr@puqi-n-!1t62s4*x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'ourscores.herokuapp.com', '.ourscores.co.uk']
 
@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fives'
+    'fives',
+    'home'
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,5 +1,8 @@
 {% extends 'fives/base.html' %}
 
+{% load staticfiles %}
+{% load static %}
+
 {% block title %}{{ team_id.name }}{% endblock %}
 
 {% block team %}
@@ -16,7 +19,7 @@ class="active"
     <div class="container">
         <h1> {{ team_id.name }} </h1>
     </div>
-</div> 
+</div>
 
 <div class="fixture-details">
     <div class="container">
@@ -34,7 +37,7 @@ class="active"
             <div class="col-md-6">
                 <h3>Next Match:</h3>
                 {% if next_match.id %}
-                    <h3><a href="/wnf/match/{{ next_match.id }}/"> {{ next_match }}</a></h3> 
+                    <h3><a href="/wnf/match/{{ next_match.id }}/"> {{ next_match }}</a></h3>
                     <h3>{{ next_match.time }}</h3>
                 {% else %}
                 <h3> {{ next_match }} </h3>
@@ -67,16 +70,27 @@ class="active"
                 </div>
             </div>
 
-        <div class="col-md-6">
-            <div class="squadlist">
-                <div class="container">
-                    <div class="row">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="squadlist">
+                    <div class="container">
+
                     <h3>Squad:</h3>
                     {% for player in team_id.player.all %}
                     <ul>
                         <li>{{ player }}</li>
                     </ul>
                     {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="squadlist">
+                    <div class="container">
+                    {% if team_id.name == 'Club 82' %}
+                    <h3>Team Photo</h3>
+                        <img src="{% static "fives/images/club_82.jpg" %}" alt="" style="width:304px;height:228px;">
+                    {% endif %}
                     </div>
                 </div>
             </div>
